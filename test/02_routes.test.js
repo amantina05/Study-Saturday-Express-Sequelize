@@ -53,7 +53,7 @@ describe('Routes', () => {
     });
 
     describe('GET /students', () => {
-      xit('retrieves all the students', () => {
+      it('retrieves all the students', () => {
         return agent
           .get('/students')
           .expect('Content-Type', /json/)
@@ -66,7 +66,7 @@ describe('Routes', () => {
     });
 
     describe('GET /students/:id', () => {
-      xit('retrieves a single student by their id', () => {
+      it('retrieves a single student by their id', () => {
         return agent
           .get(`/students/${pepper.id}`)
           .expect(200)
@@ -76,7 +76,7 @@ describe('Routes', () => {
           });
       });
 
-      xit('returns a 404 error if student does not exist in DB', () => {
+      it('returns a 404 error if student does not exist in DB', () => {
         return agent.get('/students/09432').expect(404);
       });
     });
